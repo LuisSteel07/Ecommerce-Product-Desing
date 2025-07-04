@@ -13,7 +13,7 @@ export default function ProductImages({images, images_thumbnails}:ProductImagesP
     const [image, setImage] = useState(images[0])
 
     return (
-        <section className="flex flex-col gap-4 md:w-[360px]">
+        <section className="flex flex-col justify-center items-center gap-4 md:w-[360px] sm:w-[360px] w-full">
             <ImagesCarousel actual={image} images={images} />
             <div className="lg:flex lg:flex-row hidden gap-8 justify-between">
                 {

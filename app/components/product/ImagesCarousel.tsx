@@ -33,7 +33,7 @@ export default function ImagesCarousel({actual, images}: ImagesCarouselProps){
     return (
         <section>
             <div className="flex w-full items-center justify-between relative">
-                <div className="z-50 md:hidden flex justify-between absolute w-full">
+                <div className="z-50 lg:hidden flex justify-between absolute w-full">
                     <span className="w-8 h-8 rounded-full bg-white flex items-center justify-center" onClick={() => handle_change_image(position-1)}>
                         <img src="/icon-previous.svg" alt="icon previous" className="p-2"/>
                     </span>

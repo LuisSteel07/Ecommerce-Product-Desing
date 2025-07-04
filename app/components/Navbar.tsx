@@ -43,7 +43,7 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                             About
                         </Link>
                         <Link href={"#"} className="font-semibold text-xl p-2">
-                            Cantact
+                            Contact
                         </Link>
                     </SheetContent>
                     </Sheet>    
@@ -63,7 +63,7 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                     About
                 </Link>
                 <Link href={"#"} className="h-full hover:border-b-4 hover:border-solid hover:border-b-amber-600 z-10 translate-y-0.5">
-                    Cantact
+                    Contact
                 </Link>
             </section>
             <section className="flex flex-row items-center justify-center gap-4">

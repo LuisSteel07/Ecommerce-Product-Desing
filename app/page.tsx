@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       <Navbar product={component} count={count} setCount={setCount}/>
-      <article className="flex md:flex-row flex-col lg:gap-28 gap-16 justify-center md:mt-8 m-0">
+      <article className="flex lg:flex-row flex-col items-center lg:gap-28 gap-16 justify-center md:mt-8 m-0">
         <ProductImages images={component.list_images} images_thumbnails={component.list_images_thumbnails} />
         <Product product={component} setCount={setCount} count={count}/>
       </article>
