@@ -1,12 +1,12 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
 import { ProductProps } from "./types/ProductProps";
 import ProductImages from "./components/product/ProductImages";
 
-let component: ProductProps = {
+const component: ProductProps = {
       title: "Fall Limited Edition Sneakers",
       name: "SNEAKER COMPANY",
       description: "These low-profile sneakers are you perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",

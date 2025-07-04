@@ -18,7 +18,7 @@ export default function ProductImages({images, images_thumbnails}:ProductImagesP
             <div className="lg:flex lg:flex-row hidden gap-8 justify-between">
                 {
                     images_thumbnails.map((e) => {
-                        return (<Image src={e} alt="Product Photo Thumbnail" className="rounded-2xl hover:border-amber-600 hover:border-2 hover:opacity-60" key={e} width={60} height={60} onClick={(event) => setImage(e.replace('-thumbnail', ''))}/>)
+                        return (<Image src={e} alt="Product Photo Thumbnail" className="rounded-2xl hover:border-amber-600 hover:border-2 hover:opacity-60" key={e} width={60} height={60} onClick={() => setImage(e.replace('-thumbnail', ''))}/>)
                     })
                 }
             </div>
