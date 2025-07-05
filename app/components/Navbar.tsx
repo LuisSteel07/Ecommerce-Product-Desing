@@ -22,8 +22,8 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                 <Sheet>
                     <SheetTrigger asChild>
                         <div className="flex flex-row justify-center items-center gap-4">
-                            <Image src="/icon-menu.svg" alt="icon menu" className="w-4"/>
-                            <Image src="/logo.svg" alt="logo" className="h-4" />
+                            <Image src="/icon-menu.svg" alt="icon menu" width={16} height={16}/>
+                            <Image src="/logo.svg" alt="logo" height={16} width={80}/>
                         </div>
                     </SheetTrigger>
                     <SheetContent side="left" className="bg-white">
@@ -50,7 +50,7 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                     </Sheet>    
             </section>
             <section className="lg:flex hidden flex-row justify-center items-center gap-4">
-                <Image src="/logo.svg" alt="logo" className="h-8 -translate-y-4 mr-4" />
+                <Image src="/logo.svg" alt="logo" height={32} width={240} className="h-8 -translate-y-4 mr-4" />
                 <Link href={"#"} className="h-full hover:border-b-4 hover:border-solid hover:border-b-amber-600 z-10 translate-y-0.5">
                     Collections
                 </Link>
@@ -74,7 +74,7 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                             <span className="z-10 -translate-y-4 translate-x-4  absolute bg-amber-600 p-3 rounded-full w-2 h-2 flex justify-center items-center">
                                 <p>{count}</p>
                             </span>
-                            <Image src="/icon-cart.svg" alt="cart" className="h-6 w-6"/>
+                            <Image src="/icon-cart.svg" alt="cart" width={16} height={16} className="h-6 w-6"/>
                         </div>
                     </PopoverTrigger>
                     <PopoverContent className="flex flex-col shadow-2xl shadow-black/60 w-[320px] bg-slate-100 p-2 gap-4 rounded-md">

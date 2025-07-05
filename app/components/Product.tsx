@@ -39,12 +39,12 @@ export default function Product({product, setCount}:ProductComponentProps){
             </div>
             <section className="flex md:flex-row flex-col gap-4 w-full">
                 <div className="flex flex-row rounded-lg bg-black/10 md:w-[140px] w-full h-12 text-xl justify-evenly items-center">
-                    <Image src={"/icon-minus.svg"} onClick={() => setValue(value-1)} alt="icon minus"/>
+                    <Image src={"/icon-minus.svg"} onClick={() => setValue(value-1)} alt="icon minus" width={12} height={12}/>
                     <p className="font-bold">{value}</p>
-                    <Image src={"/icon-plus.svg"} onClick={() => setValue(value+1)} alt="icon plus"/>
+                    <Image src={"/icon-plus.svg"} onClick={() => setValue(value+1)} alt="icon plus" width={12} height={12}/>
                 </div>
                 <button onClick={() => handle_submit()} className="bg-amber-600 hover:bg-amber-500/80 transition-all ease-in-out duration-100 justify-center items-center gap-4 rounded-lg flex flex-row md:w-[180px] w-full h-12">
-                    <Image src="/icon-cart.svg" alt="icon cart" className="w-4 h-4 contrast-200" />
+                    <Image src="/icon-cart.svg" alt="icon cart" className="w-4 h-4 contrast-200" width={16} height={16} />
                     <p className="font-bold text-[14px]">Add to cart</p>
                 </button>
             </section>
