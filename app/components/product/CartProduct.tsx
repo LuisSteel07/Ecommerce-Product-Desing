@@ -9,7 +9,7 @@ type CartProductProps = {
 
 export default function CartProduct({product, count, setCount}: CartProductProps){
     return (
-        <section className="flex flex-row gap-4 items-center text-black/60">
+        <section className="flex flex-row gap-4 items-center dark:text-white text-black/60">
             <Image src={product.list_images[0]} alt="product image" width={64} height={64} className="w-16 rounded-md" />
             <div className="flex flex-col">
                 <p>{product.title}</p>
