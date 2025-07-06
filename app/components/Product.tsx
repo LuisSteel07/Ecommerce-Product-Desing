@@ -44,7 +44,8 @@ export default function Product({product, setCount}:ProductComponentProps){
                     <Image src={"/icon-plus.svg"} onClick={() => setValue(value+1)} alt="icon plus" width={12} height={12}/>
                 </div>
                 <button onClick={() => handle_submit()} className="bg-amber-600 hover:bg-amber-500/80 transition-all ease-in-out duration-100 justify-center items-center gap-4 rounded-lg flex flex-row md:w-[180px] w-full h-12">
-                    <Image src="/icon-cart.svg" alt="icon cart" className="w-4 h-4 contrast-200" width={16} height={16} />
+                    <Image src="/icon-cart.svg" alt="icon cart" className="dark:hidden block w-4 h-4 contrast-200" width={16} height={16} />
+                    <Image src="/icon-cart-light.svg" alt="icon cart" className="dark:block hidden w-4 h-4 contrast-200" width={16} height={16} />
                     <p className="font-bold text-[14px]">Add to cart</p>
                 </button>
             </section>

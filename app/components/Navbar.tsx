@@ -52,7 +52,7 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                             Contact
                         </Link>
                     </SheetContent>
-                    </Sheet>    
+                </Sheet>    
             </section>
             <section className="lg:flex hidden flex-row justify-center items-center gap-4">
                 <Image src="/logo.svg" alt="logo" height={32} width={240} className="dark:hidden block h-8 -translate-y-4 mr-4" />
@@ -82,7 +82,7 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                             <span className="sr-only">Toggle theme</span>
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
+                    <DropdownMenuContent className="bg-white dark:bg-black" align="end">
                         <DropdownMenuItem onClick={() => setTheme("light")}>
                         Light
                         </DropdownMenuItem>
@@ -100,7 +100,8 @@ export default function Navbar({product, count, setCount}:NavbarProps) {
                             <span className="z-10 -translate-y-4 translate-x-4  absolute bg-amber-600 p-3 rounded-full w-2 h-2 flex justify-center items-center">
                                 <p>{count}</p>
                             </span>
-                            <Image src="/icon-cart.svg" alt="cart" width={16} height={16} className="h-6 w-6"/>
+                            <Image src="/icon-cart.svg" alt="cart" width={16} height={16} className="dark:hidden block h-6 w-6"/>
+                            <Image src="/icon-cart-light.svg" alt="cart" width={16} height={16} className="dark:block hidden h-6 w-6"/>
                         </div>
                     </PopoverTrigger>
                     <PopoverContent className="flex flex-col shadow-2xl shadow-black/60 w-[320px] dark:bg-black/80 bg-slate-100 p-2 gap-4 rounded-md">
