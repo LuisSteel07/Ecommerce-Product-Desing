@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Eccommerce Product",
   description: "Show various products",
-  icons: '/favicon-32x32.png'
+  icons: "/favicon-32x32.png",
 };
 
 export default function RootLayout({
