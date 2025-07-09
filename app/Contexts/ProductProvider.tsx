@@ -1,9 +1,7 @@
 "use client";
 import { useState } from "react";
-import { ProductContext } from "./Contexts/ProductContext";
-import { ProductProps } from "./types/ProductProps";
-import ProductImages from "./components/product/ProductImages";
-import Product from "./components/Product";
+import { ProductProps } from "../types/ProductProps";
+import { ProductContext } from "./ProductContext";
 
 const product: ProductProps = {
   title: "Fall Limited Edition Sneakers",
@@ -26,20 +24,15 @@ const product: ProductProps = {
   ],
 };
 
-export default function ProductLayout({
+export default function ProductProvider({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const [count, setCount] = useState<number>(0);
-
   return (
     <ProductContext.Provider value={{ product, count, setCount }}>
       {children}
-      <article className="flex lg:flex-row flex-col items-center lg:gap-28 gap-16 justify-center md:mt-24 m-0">
-        <ProductImages />
-        <Product />
-      </article>
     </ProductContext.Provider>
   );
 }

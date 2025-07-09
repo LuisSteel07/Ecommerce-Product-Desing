@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 import { ProductProps } from "../types/ProductProps";
 
 const component: ProductProps = {
