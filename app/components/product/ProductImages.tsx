@@ -13,7 +13,7 @@ import SelectImage from "./SelectImage";
 import { ProductContext } from "@/app/Contexts/ProductContext";
 
 export default function ProductImages() {
-  const { product, count, setCount } = useContext(ProductContext);
+  const { product } = useContext(ProductContext);
 
   const [image, setImage] = useState(product.list_images[0]);
 
