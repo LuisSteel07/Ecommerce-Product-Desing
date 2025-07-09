@@ -9,7 +9,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ProductProps } from "../types/ProductProps";
 import { Button } from "@/components/ui/button";
 import CartProduct from "./product/CartProduct";
 import {
@@ -26,15 +25,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useContext } from "react";
+import { ProductContext } from "../Contexts/ProductContext";
 
-type NavbarProps = {
-  product: ProductProps;
-  count: number;
-  setCount: (value: number) => void;
-};
-
-export default function Navbar({ product, count, setCount }: NavbarProps) {
+export default function Navbar() {
   const { setTheme } = useTheme();
+  const { product, count, setCount } = useContext(ProductContext);
+
   return (
     <nav className="flex flex-row justify-between md:border-b-2 md:border-black/10 dark:md:border-white/10 border-0 md:m-0 m-2 z-0">
       <section className="flex lg:hidden">

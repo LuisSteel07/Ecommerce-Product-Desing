@@ -1,17 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { ProductProps } from "../types/ProductProps";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ProductContext } from "../Contexts/ProductContext";
 
-type ProductComponentProps = {
-  product: ProductProps;
-  setCount: (value: number) => void;
-  count: number;
-};
-
-export default function Product({ product, setCount }: ProductComponentProps) {
+export default function Product() {
+  const { product, setCount } = useContext(ProductContext);
   const [value, setValue] = useState(0);
 
   function handle_submit() {
