@@ -1,4 +1,3 @@
-import { CartProduct } from "./CartProduct";
 import { ProductProps } from "./ProductProps";
 
 export type Action =

@@ -10,7 +10,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import CartProduct from "./product/CartProduct";
 import {
   Popover,
   PopoverContent,
@@ -30,7 +29,7 @@ import { ProductContext } from "../Contexts/ProductProvider";
 import CartProductCard from "./product/CartProduct";
 
 export default function Navbar() {
-  const { state, dispatch } = useContext(ProductContext);
+  const { state } = useContext(ProductContext);
   const { setTheme } = useTheme();
   const [allProducts, setAllProducts] = useState(0);
 
