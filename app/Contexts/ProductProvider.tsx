@@ -1,37 +1,58 @@
 "use client";
-import { useState } from "react";
+import { createContext, Dispatch, useReducer, useState } from "react";
 import { ProductProps } from "../types/ProductProps";
-import { ProductContext } from "./ProductContext";
+import reducer from "../Reducer/reducer";
+import { Action } from "../types/Action";
+import { GlobalState } from "../types/GlobalState";
 
-const product: ProductProps = {
-  title: "Fall Limited Edition Sneakers",
-  name: "SNEAKER COMPANY",
-  description:
-    "These low-profile sneakers are you perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-  price: 250.0,
-  discount: 50,
-  list_images: [
-    "/image-product-1.jpg",
-    "/image-product-2.jpg",
-    "/image-product-3.jpg",
-    "/image-product-4.jpg",
-  ],
-  list_images_thumbnails: [
-    "/image-product-1-thumbnail.jpg",
-    "/image-product-2-thumbnail.jpg",
-    "/image-product-3-thumbnail.jpg",
-    "/image-product-4-thumbnail.jpg",
-  ],
+const products: Array<ProductProps> = [
+  {
+    id: 12,
+    name: "Malta Van Pur 330ml (six pack)",
+    short_description:
+      "Pack de 6 latas de Malta Van Pur, con un sabor auténtico y refrescante.",
+    price: 3.99,
+    thumbnail:
+      "https://cdn.compratoday.com/products/PUCARA/02 Malta Van Pur.jpg",
+  },
+  {
+    id: 13,
+    name: "Other Malta Van Pur 330ml (six pack)",
+    short_description:
+      "Pack de 6 latas de Malta Van Pur, con un sabor auténtico y refrescante.",
+    price: 3.99,
+    thumbnail:
+      "https://cdn.compratoday.com/products/PUCARA/02 Malta Van Pur.jpg",
+  },
+];
+
+type ProductContextType = {
+  dispatch: Dispatch<Action>;
+  state: GlobalState;
 };
+
+const initialState: GlobalState = {
+  products: products,
+  cart: {
+    products: [],
+    total: 0,
+  },
+};
+
+export const ProductContext = createContext<ProductContextType>({
+  dispatch: () => {},
+  state: initialState,
+});
 
 export default function ProductProvider({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [count, setCount] = useState<number>(0);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
-    <ProductContext.Provider value={{ product, count, setCount }}>
+    <ProductContext.Provider value={{ dispatch, state }}>
       {children}
     </ProductContext.Provider>
   );

@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Fall Limited Edition Sneakers",
+    "name": "SNEAKER COMPANY",
+    "description": "These low-profile sneakers are you perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
+    "price": 250.0,
+    "discount": 50,
+    "list_images": [
+      "/products/shoes/image-product-1.jpg",
+      "/products/shoes/image-product-2.jpg",
+      "/products/shoes/image-product-3.jpg",
+      "/products/shoes/image-product-4.jpg"
+    ],
+    "list_images_thumbnails": [
+      "/products/shoes/image-product-1-thumbnail.jpg",
+      "/products/shoes/image-product-2-thumbnail.jpg",
+      "/products/shoes/image-product-3-thumbnail.jpg",
+      "/products/shoes/image-product-4-thumbnail.jpg"
+    ]
+  },
+  {
+    "title": "Laptop HP Ryzen 5",
+    "name": "HP Spruce Blue 15.6\"",
+    "description": "Laptop con pantalla FHD de 15.6 pulgadas, procesador AMD Ryzen 5, 8GB RAM y 256GB SSD. Ideal para trabajo y entretenimiento.",
+    "price": 799.99,
+    "discount": 10,
+    "list_images": [
+      "/products/laptop/laptop 1.webp",
+      "/products/laptop/laptop 2.webp",
+      "/products/laptop/laptop 3.webp",
+      "/products/laptop/laptop 4.webp"
+    ],
+    "list_images_thumbnails": [
+      "/products/laptop/laptop 1.webp",
+      "/products/laptop/laptop 2.webp",
+      "/products/laptop/laptop 3.webp",
+      "/products/laptop/laptop 4.webp"
+    ]
+  },
+  {
+    "title": "Smartphone Android XS15",
+    "name": "XS15 Mini 3G",
+    "description": "Smartphone compacto con pantalla de 3 pulgadas, cámara dual, Android 8.1 y soporte para doble SIM.",
+    "price": 129.99,
+    "discount": 5,
+    "list_images": [
+      "/products/smartphone/smartphone 1.jpg",
+      "/products/smartphone/smartphone 2.jpg",
+      "/products/smartphone/smartphone 3.jpg",
+      "/products/smartphone/smartphone 4.jpg"
+    ],
+    "list_images_thumbnails": [
+      "/products/smartphone/smartphone 1.jpg",
+      "/products/smartphone/smartphone 2.jpg",
+      "/products/smartphone/smartphone 3.jpg",
+      "/products/smartphone/smartphone 4.jpg"
+    ]
+  },
+  {
+    "title": "Auriculares Beats Studio Pro",
+    "name": "Beats Studio Pro Navy",
+    "description": "Auriculares inalámbricos con cancelación activa de ruido, sonido envolvente y diseño elegante.",
+    "price": 349.99,
+    "discount": 15,
+    "list_images": [
+      "/products/Auriculares/Auriculares 1.jpg",
+      "/products/Auriculares/Auriculares 2.jpg",
+      "/products/Auriculares/Auriculares 3.jpg",
+      "/products/Auriculares/Auriculares 4.jpg"
+    ],
+    "list_images_thumbnails": [
+      "/products/Auriculares/Auriculares 1.jpg",
+      "/products/Auriculares/Auriculares 2.jpg",
+      "/products/Auriculares/Auriculares 3.jpg",
+      "/products/Auriculares/Auriculares 4.jpg"
+    ]
+  },
+  {
+    "title": "Smartwatch SKG Fitness",
+    "name": "SKG 1.7'' Touch",
+    "description": "Reloj inteligente resistente al agua, con monitor de salud, pantalla táctil y compatibilidad con Android/iPhone.",
+    "price": 89.99,
+    "discount": 20,
+    "list_images": [
+      "/products/watch/Smartwatch SKG Fitness 1.webp",
+      "/products/watch/Smartwatch SKG Fitness 2.webp",
+      "/products/watch/Smartwatch SKG Fitness 3.webp",
+      "/products/watch/Smartwatch SKG Fitness 4.webp"
+    ],
+    "list_images_thumbnails": [
+      "/products/watch/Smartwatch SKG Fitness 1.webp",
+      "/products/watch/Smartwatch SKG Fitness 2.webp",
+      "/products/watch/Smartwatch SKG Fitness 3.webp",
+      "/products/watch/Smartwatch SKG Fitness 4.webp"
+    ]
+  }
+]

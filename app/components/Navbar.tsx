@@ -25,12 +25,22 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useContext } from "react";
-import { ProductContext } from "../Contexts/ProductContext";
+import { useContext, useEffect, useState } from "react";
+import { ProductContext } from "../Contexts/ProductProvider";
+import CartProductCard from "./product/CartProduct";
 
 export default function Navbar() {
+  const { state, dispatch } = useContext(ProductContext);
   const { setTheme } = useTheme();
-  const { product, count, setCount } = useContext(ProductContext);
+  const [allProducts, setAllProducts] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+    state.cart.products.map((e) => {
+      total += e.count;
+    });
+    setAllProducts(total);
+  }, [state.cart.products]);
 
   return (
     <nav className="flex flex-row justify-between md:border-b-2 md:border-black/10 dark:md:border-white/10 border-0 md:m-0 m-2 z-0">
@@ -43,12 +53,14 @@ export default function Navbar() {
                 alt="icon menu"
                 width={16}
                 height={16}
+                style={{ height: "auto", width: "auto" }}
               />
               <Image
                 src="/logo.svg"
                 alt="logo"
                 height={16}
                 width={80}
+                style={{ height: "auto", width: "auto" }}
                 className="dark:hidden block"
               />
               <Image
@@ -56,6 +68,7 @@ export default function Navbar() {
                 alt="logo"
                 height={16}
                 width={80}
+                style={{ height: "auto", width: "auto" }}
                 className="dark:block hidden"
               />
             </div>
@@ -65,6 +78,9 @@ export default function Navbar() {
               <p className="font-bold text-2xl p-2">Menu</p>
             </SheetTitle>
             <SheetDescription></SheetDescription>
+            <Link href={"/"} className="font-semibold text-xl p-2">
+              Home
+            </Link>
             <Link href={"#"} className="font-semibold text-xl p-2">
               Collections
             </Link>
@@ -84,20 +100,24 @@ export default function Navbar() {
         </Sheet>
       </section>
       <section className="lg:flex hidden flex-row justify-center items-center gap-4">
-        <Image
-          src="/logo.svg"
-          alt="logo"
-          height={32}
-          width={240}
-          className="dark:hidden block h-8 -translate-y-4 mr-4"
-        />
-        <Image
-          src="/logo-light.svg"
-          alt="logo"
-          height={32}
-          width={240}
-          className="dark:block hidden h-8 -translate-y-4 mr-4"
-        />
+        <Link href={"/"}>
+          <Image
+            src="/logo.svg"
+            alt="logo"
+            height={32}
+            width={240}
+            style={{ height: "auto", width: "auto" }}
+            className="dark:hidden block h-8 -translate-y-4 mr-4"
+          />
+          <Image
+            src="/logo-light.svg"
+            alt="logo"
+            height={32}
+            width={240}
+            style={{ height: "auto", width: "auto" }}
+            className="dark:block hidden h-8 -translate-y-4 mr-4"
+          />
+        </Link>
         <Link
           href={"#"}
           className="h-full hover:border-b-4 hover:border-solid hover:border-b-amber-600 z-10 translate-y-0.5"
@@ -154,7 +174,7 @@ export default function Navbar() {
           <PopoverTrigger>
             <div className="z-0 flex relative">
               <span className="z-10 -translate-y-4 translate-x-4  absolute bg-amber-600 p-3 rounded-full w-2 h-2 flex justify-center items-center">
-                <p>{count}</p>
+                <p>{allProducts}</p>
               </span>
               <Image
                 src="/icon-cart.svg"
@@ -172,13 +192,16 @@ export default function Navbar() {
               />
             </div>
           </PopoverTrigger>
-          <PopoverContent className="flex flex-col shadow-2xl shadow-black/60 w-[420px] dark:bg-black bg-slate-100 p-8 gap-4 rounded-md">
+          <PopoverContent className="flex flex-col shadow-2xl shadow-black/60 md:w-[420px] w-[360px] dark:bg-black bg-slate-100 p-8 gap-4 rounded-md">
             <>
-              <h1 className="dark:text-white text-black text-xl font-bold">
-                Cart
-              </h1>
+              <div className="flex flex-row justify-between gap-4">
+                <h1 className="dark:text-white text-black text-xl font-bold">Cart</h1>
+                <p className="dark:text-white text-black text-md font-bold">
+                  Total: {state.cart.total.toFixed(2)}
+                </p>
+              </div>
               <hr />
-              {count == 0 ? (
+              {state.cart.products.length == 0 ? (
                 <div className="flex justify-center items-center h-[120px]">
                   <h1 className="text-xl font-bold dark:text-white text-black">
                     Empty Cart
@@ -186,11 +209,9 @@ export default function Navbar() {
                 </div>
               ) : (
                 <>
-                  <CartProduct
-                    product={product}
-                    count={count}
-                    setCount={setCount}
-                  />
+                  {state.cart.products.map((e) => {
+                    return <CartProductCard product={e} key={e.id} />;
+                  })}
                   <Button className="bg-amber-600">Checkout</Button>
                 </>
               )}

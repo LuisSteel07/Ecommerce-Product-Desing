@@ -35,8 +35,8 @@ export default function ImagesCarousel({
   }, [actual]);
 
   return (
-    <section className="flex justify-center items-center w-full relative">
-      <div className="z-50 flex justify-between absolute w-full">
+    <section className="flex justify-center items-center md:w-[480px] w-[320px] relative">
+      <div className="z-50 flex justify-between absolute md:w-[520px] w-[360px]">
         <span
           className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
           onClick={() => handle_change_image(position - 1)}
@@ -66,6 +66,7 @@ export default function ImagesCarousel({
         className="z-10 rounded-2xl"
         width={650}
         height={650}
+        style={{ height: 'auto', width: 'auto' }}
       />
     </section>
   );

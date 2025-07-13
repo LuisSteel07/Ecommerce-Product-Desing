@@ -10,12 +10,18 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import SelectImage from "./SelectImage";
-import { ProductContext } from "@/app/Contexts/ProductContext";
+import { ProductContext } from "@/app/Contexts/ProductProvider";
 
-export default function ProductImages() {
-  const { product } = useContext(ProductContext);
+export default function ProductImages(params: { id: number }) {
+  const { state } = useContext(ProductContext);
 
-  const [image, setImage] = useState(product.list_images[0]);
+  let product = state.products.find((e) => e.id == params.id);
+
+  if (!product) {
+    product = state.products[0];
+  }
+
+  const [image, setImage] = useState(product.thumbnail);
 
   return (
     <section className="flex flex-col justify-center items-center gap-4 md:w-[500px] sm:w-[360px] w-full">
@@ -33,21 +39,15 @@ export default function ProductImages() {
           <DialogContent className="dark:text-white text-black bg-transparent border-0 w-[650px] shadow-none">
             <DialogTitle></DialogTitle>
             <article className="w-full">
-              <ImagesCarousel actual={image} images={product.list_images} />
-              <SelectImage
-                images_thumbnails={product.list_images_thumbnails}
-                setImage={setImage}
-              />
+              <ImagesCarousel actual={image} images={[image]} />
+              <SelectImage images_thumbnails={[image]} setImage={setImage} />
             </article>
           </DialogContent>
         </Dialog>
-        <SelectImage
-          images_thumbnails={product.list_images_thumbnails}
-          setImage={setImage}
-        />
+        <SelectImage images_thumbnails={[image]} setImage={setImage} />
       </div>
-      <div className="flex md:hidden w-full">
-        <ImagesCarousel actual={image} images={product.list_images} />
+      <div className="flex justify-center md:hidden w-full">
+        <ImagesCarousel actual={image} images={[image]} />
       </div>
     </section>
   );
