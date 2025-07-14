@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CartProduct } from "@/app/types/CartProduct";
 import { useContext } from "react";
-import { ProductContext } from "@/app/Contexts/ProductProvider";
+import { ProductContext } from "@/app/contexts/ProductProvider";
 
 type CartProductProps = {
   product: CartProduct;

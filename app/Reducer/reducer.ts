@@ -1,6 +1,7 @@
 import { Action } from "../types/Action";
 import { CartProduct } from "../types/CartProduct";
 import { GlobalState } from "../types/GlobalState";
+import { ProductProps } from "../types/ProductProps";
 
 export default function reducer(
   state: GlobalState,
@@ -70,6 +71,22 @@ export default function reducer(
           products: filterCartProduct,
           total: filterTotal,
         },
+      };
+    case "SET_PRODUCTS":
+      return {
+        ...state,
+        products: action.payload,
+        cart: state.cart,
+      };
+    case "SET_PAGE":
+      return {
+        ...state,
+        page: action.payload.page,
+      };
+    case "FILTER_PRODUCTS":
+      return {
+        ...state,
+        search: action.payload.search,
       };
   }
 }

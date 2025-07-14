@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import SelectImage from "./SelectImage";
-import { ProductContext } from "@/app/Contexts/ProductProvider";
+import { ProductContext } from "@/app/contexts/ProductProvider";
 
 export default function ProductImages(params: { id: number }) {
   const { state } = useContext(ProductContext);

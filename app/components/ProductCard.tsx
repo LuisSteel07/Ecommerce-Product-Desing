@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useContext, useEffect, useState } from "react";
 import { ProductProps } from "../types/ProductProps";
-import { ProductContext } from "../Contexts/ProductProvider";
+import { ProductContext } from "../contexts/ProductProvider";
 import Link from "next/link";
 
 type ProductCardComponent = {
@@ -42,7 +42,9 @@ export default function ProductCard({ product }: ProductCardComponent) {
     <Card className="w-[360px] m-4">
       <CardHeader>
         <CardTitle className="text-xl">{name}</CardTitle>
-        <Link href={`/details/${id}`} className="text-orange-500 font-bold">View more</Link>
+        <Link href={`/details/${id}`} className="text-orange-500 font-bold">
+          View more
+        </Link>
       </CardHeader>
       <CardContent className="flex flex-col gap-8">
         <Image

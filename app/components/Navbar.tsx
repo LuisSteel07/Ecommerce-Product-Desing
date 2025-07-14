@@ -25,7 +25,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useContext, useEffect, useState } from "react";
-import { ProductContext } from "../Contexts/ProductProvider";
+import { ProductContext } from "../contexts/ProductProvider";
 import CartProductCard from "./product/CartProduct";
 
 export default function Navbar() {
@@ -194,7 +194,9 @@ export default function Navbar() {
           <PopoverContent className="flex flex-col shadow-2xl shadow-black/60 md:w-[420px] w-[360px] dark:bg-black bg-slate-100 p-8 gap-4 rounded-md">
             <>
               <div className="flex flex-row justify-between gap-4">
-                <h1 className="dark:text-white text-black text-xl font-bold">Cart</h1>
+                <h1 className="dark:text-white text-black text-xl font-bold">
+                  Cart
+                </h1>
                 <p className="dark:text-white text-black text-md font-bold">
                   Total: {state.cart.total.toFixed(2)}
                 </p>

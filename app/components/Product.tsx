@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ProductContext } from "../Contexts/ProductProvider";
+import { ProductContext } from "../contexts/ProductProvider";
 
 export default function Product(params: { id: number }) {
   const { state, dispatch } = useContext(ProductContext);
