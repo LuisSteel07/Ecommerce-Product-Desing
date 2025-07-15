@@ -18,7 +18,6 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const { data: session } = useSession();
-  console.log(session);
 
   return (
     <nav className="flex md:flex-row justify-between flex-col md:border-b-2 md:border-black/10 dark:md:border-white/10 border-0 m-2 z-0">
