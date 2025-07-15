@@ -39,7 +39,7 @@ export default function ProductCard({ product }: ProductCardComponent) {
   }, [state.cart.products]);
 
   return (
-    <Card className="w-[360px] m-4">
+    <Card className="w-[340px] m-4">
       <CardHeader>
         <CardTitle className="text-xl">{name}</CardTitle>
         <Link href={`/details/${id}`} className="text-orange-500 font-bold">

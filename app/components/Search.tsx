@@ -11,16 +11,23 @@ export default function Search() {
   const { dispatch } = useContext(ProductContext);
 
   return (
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-row gap-4 h-[40px]">
       <Input
+        className="h-[40px]"
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) =>
+          e.key === "Enter"
+            ? dispatch({ type: "FILTER_PRODUCTS", payload: { search: value } })
+            : {}
+        }
       />
       <Button
         onClick={() =>
           dispatch({ type: "FILTER_PRODUCTS", payload: { search: value } })
         }
+        className="h-[40px]"
       >
         <Image
           alt="Magnifier icon"
