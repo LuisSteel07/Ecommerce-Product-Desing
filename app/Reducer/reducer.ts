@@ -1,7 +1,6 @@
 import { Action } from "../types/Action";
 import { CartProduct } from "../types/CartProduct";
 import { GlobalState } from "../types/GlobalState";
-import { ProductProps } from "../types/ProductProps";
 
 export default function reducer(
   state: GlobalState,

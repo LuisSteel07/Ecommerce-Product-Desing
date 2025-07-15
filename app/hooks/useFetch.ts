@@ -14,8 +14,12 @@ export function useFetch(url: string) {
         if (!res.ok) throw new Error(`Error: ${res.status}`);
         const json = await res.json();
         setData(json.items);
-      } catch (err: any) {
-        setError(err.message);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Unkdown error");
+        }
       } finally {
         setLoading(false);
       }
