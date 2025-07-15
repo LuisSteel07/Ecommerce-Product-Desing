@@ -10,7 +10,12 @@ export function useFetch(url: string) {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(url);
+        const res = await fetch(url, {
+          headers: {
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+          },
+        });
         if (!res.ok) throw new Error(`Error: ${res.status}`);
         const json = await res.json();
         setData(json.items);
