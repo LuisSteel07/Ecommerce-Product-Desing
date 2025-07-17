@@ -8,8 +8,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useContext, useEffect, useState } from "react";
-import { ProductProps } from "../types/ProductProps";
-import { ProductContext } from "../contexts/ProductProvider";
+import { ProductProps } from "../../types/ProductProps";
+import { ProductContext } from "../../contexts/ProductProvider";
 import Link from "next/link";
 
 type ProductCardComponent = {
@@ -36,7 +36,7 @@ export default function ProductCard({ product }: ProductCardComponent) {
     } else {
       setQuantity(searchQuantity);
     }
-  }, [state.cart.products]);
+  }, [state.cart.products, id]);
 
   return (
     <Card className="w-[340px] m-4">

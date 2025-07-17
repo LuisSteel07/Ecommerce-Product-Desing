@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ProductContext } from "../contexts/ProductProvider";
+import { ProductContext } from "../../contexts/ProductProvider";
 
 export default function Product(params: { id: number }) {
   const { state, dispatch } = useContext(ProductContext);
@@ -29,7 +29,7 @@ export default function Product(params: { id: number }) {
     } else {
       setQuantity(searchQuantity);
     }
-  }, [state.cart.products]);
+  }, [state.cart.products, params.id]);
 
   return (
     <section className="dark:text-white flex flex-col gap-12 md:w-[480px] md:mt-8 m-8">

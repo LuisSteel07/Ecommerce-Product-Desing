@@ -1,5 +1,5 @@
 import Pagination from "./components/pagination";
-import ProductsList from "./components/products-list";
+import ProductsList from "./components/product/products-list";
 
 export default function Home() {
   return (

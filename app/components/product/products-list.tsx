@@ -1,11 +1,11 @@
 "use client";
 
 import ProductCard from "./product-card";
-import { SkeletonCard } from "./skeleton-component";
-import { useFetch } from "../hooks/useFetch";
+import { SkeletonCard } from "../skeleton-component";
+import { useFetch } from "../../hooks/useFetch";
 import { useContext } from "react";
-import { ProductContext } from "../contexts/ProductProvider";
-import { useFilter } from "../hooks/useFilter";
+import { ProductContext } from "../../contexts/ProductProvider";
+import { useFilter } from "../../hooks/useFilter";
 
 export default function ProductsList() {
   const { state } = useContext(ProductContext);

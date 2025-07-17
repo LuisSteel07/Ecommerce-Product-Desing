@@ -4,9 +4,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import CartProductCard from "./product/cart-product";
+import CartProductCard from "./product-cart";
 import { Button } from "@/components/ui/button";
-import { ProductContext } from "../contexts/ProductProvider";
+import { ProductContext } from "../../contexts/ProductProvider";
 import { useContext, useEffect, useState } from "react";
 
 export default function CartPopover() {

@@ -9,11 +9,11 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import ThemeSelector from "./theme-selector";
-import CartPopover from "./cart-popover";
+import ThemeSelector from "./theme/theme-selector";
+import CartPopover from "./product/cart-popover";
 import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
-import { NavUser } from "./nav-user";
+import { UserDateils } from "./user-details";
 import Search from "./search";
 
 export default function Navbar() {
@@ -80,7 +80,7 @@ export default function Navbar() {
       <section className="flex flex-row items-center justify-center md:gap-8 gap-4 mb-4">
         <CartPopover />
         {session ? (
-          <NavUser
+          <UserDateils
             name={session.user?.name || ""}
             email={session.user?.email || ""}
             image={session.user?.image || ""}

@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { signOut } from "next-auth/react";
 
-export function NavUser(user: { name: string; image: string; email: string }) {
+export function UserDateils(user: { name: string; image: string; email: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
