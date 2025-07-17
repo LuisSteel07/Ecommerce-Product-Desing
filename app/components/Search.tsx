@@ -27,7 +27,7 @@ export default function Search() {
         onClick={() =>
           dispatch({ type: "FILTER_PRODUCTS", payload: { search: value } })
         }
-        className="h-[40px]"
+        className="h-[40px] dark:bg-white/80 dark:hover:bg-white/50 bg-muted hover:bg-black/50"
       >
         <Image
           alt="Magnifier icon"

@@ -21,6 +21,7 @@ export default function Pagination() {
           dispatch({ type: "SET_PAGE", payload: { page: state.page - 5 } })
         }
         disabled={locked}
+        className="dark:bg-white/80 dark:hover:bg-white/50 bg-muted hover:bg-black/50"
       >
         <Image
           src={"/icon-previous.svg"}
@@ -34,6 +35,7 @@ export default function Pagination() {
         onClick={() =>
           dispatch({ type: "SET_PAGE", payload: { page: state.page + 5 } })
         }
+        className="dark:bg-white/80 dark:hover:bg-white/50 bg-muted hover:bg-black/50"
       >
         <Image src={"/icon-next.svg"} width={12} height={12} alt="next icon" />
       </Button>
