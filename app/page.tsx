@@ -1,4 +1,4 @@
-import Pagination from "./components/Pagination";
+import Pagination from "./components/pagination";
 import ProductsList from "./components/products-list";
 
 export default function Home() {
