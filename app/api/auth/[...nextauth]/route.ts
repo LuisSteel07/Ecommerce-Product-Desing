@@ -1,4 +1,4 @@
-import NextAuth, { DefaultUser, Session } from "next-auth";
+import NextAuth, { DefaultUser } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";

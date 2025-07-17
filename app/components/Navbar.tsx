@@ -14,7 +14,7 @@ import CartPopover from "./cart-popover";
 import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { NavUser } from "./nav-user";
-import Search from "./Search";
+import Search from "./search";
 
 export default function Navbar() {
   const { data: session } = useSession();
