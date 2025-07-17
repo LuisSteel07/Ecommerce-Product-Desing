@@ -1,9 +1,9 @@
-import AccountCard from "./AccountCard";
+import { LoginForm } from "./login-form";
 
 export default function Account() {
   return (
     <main className="flex justify-center py-8">
-      <AccountCard />
+      <LoginForm />
     </main>
   );
 }
