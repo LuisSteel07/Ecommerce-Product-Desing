@@ -31,15 +31,39 @@ export function LoginForm({
           <form>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
-                <Button variant="outline" className="w-full" onClick={() => signIn("github")}>
-                  <Image width={20} height={20} alt="github icon white" src={"/github-mark-white.svg"} className="dark:flex hidden"/>
-                  <Image width={20} height={20} alt="github icon" src={"/github-mark.svg"} className="flex dark:hidden"/>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() =>
+                    signIn("github", {
+                      callbackUrl: "/",
+                    })
+                  }
+                >
+                  <Image
+                    width={20}
+                    height={20}
+                    alt="github icon white"
+                    src={"/github-mark-white.svg"}
+                    className="dark:flex hidden"
+                  />
+                  <Image
+                    width={20}
+                    height={20}
+                    alt="github icon"
+                    src={"/github-mark.svg"}
+                    className="flex dark:hidden"
+                  />
                   Login with Github
                 </Button>
                 <Button
                   variant="outline"
                   className="w-full"
-                  onClick={() => signIn("google")}
+                  onClick={() =>
+                    signIn("google", {
+                      callbackUrl: "/",
+                    })
+                  }
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path

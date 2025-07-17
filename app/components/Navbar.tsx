@@ -81,7 +81,9 @@ export default function Navbar() {
         <CartPopover />
         {session ? (
           <NavUser
-            user={session.user}
+            name={session.user?.name || ""}
+            email={session.user?.email || ""}
+            image={session.user?.image || ""}
           />
         ) : (
           <Link href={"/account"}>
