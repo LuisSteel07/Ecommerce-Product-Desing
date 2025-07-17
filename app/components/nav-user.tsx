@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { signOut } from "next-auth/react";
 
-export function NavUser(user: {name: string, image: string, email: string}) {
+export function NavUser(user: { name: string; image: string; email: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -67,7 +67,7 @@ export function NavUser(user: {name: string, image: string, email: string}) {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => signOut({callbackUrl: "/"})}>
+        <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
           <IconLogout />
           Log out
         </DropdownMenuItem>

@@ -1,7 +1,7 @@
 "use client";
 
-import ProductCard from "./ProductCard";
-import { SkeletonCard } from "./SkeletonComponent";
+import ProductCard from "./product-card";
+import { SkeletonCard } from "./skeleton-component";
 import { useFetch } from "../hooks/useFetch";
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductProvider";
@@ -29,7 +29,7 @@ export default function ProductsList() {
     );
 
   return (
-    <section className="flex flex-row flex-wrap gap-4 justify-center">
+    <section className="flex flex-row flex-wrap items-start gap-4 justify-center">
       {filter.map((e) => {
         return <ProductCard product={e} key={e.id} />;
       })}

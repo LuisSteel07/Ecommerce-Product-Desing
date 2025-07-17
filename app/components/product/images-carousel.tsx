@@ -66,7 +66,7 @@ export default function ImagesCarousel({
         className="z-10 rounded-2xl"
         width={650}
         height={650}
-        style={{ height: 'auto', width: 'auto' }}
+        style={{ height: "auto", width: "auto" }}
       />
     </section>
   );

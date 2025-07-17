@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { useContext, useState } from "react";
-import ImagesCarousel from "./ImagesCarousel";
+import ImagesCarousel from "./images-carousel";
 import {
   Dialog,
   DialogContent,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import SelectImage from "./SelectImage";
+import SelectImage from "./select-image";
 import { ProductContext } from "@/app/contexts/ProductProvider";
 
 export default function ProductImages(params: { id: number }) {

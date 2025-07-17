@@ -9,12 +9,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import Search from "./Search";
-import ThemeSelector from "./ThemeSelector";
-import CartPopover from "./CartPopover";
+import ThemeSelector from "./theme-selector";
+import CartPopover from "./cart-popover";
 import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { NavUser } from "./nav-user";
+import Search from "./Search";
 
 export default function Navbar() {
   const { data: session } = useSession();
