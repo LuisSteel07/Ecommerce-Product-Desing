@@ -19,12 +19,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { signOut } from "next-auth/react";
 
-type User = {
-  name: string;
-  email: string;
-  image: string;
-};
-
 export function NavUser({
   user,
 }: {
