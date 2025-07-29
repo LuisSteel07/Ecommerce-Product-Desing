@@ -1,17 +1,18 @@
-import { ReactNode, useContext } from "react";
+import { FC, PropsWithChildren, useContext } from "react";
 import { Button } from "../ui/button";
 import { ProductContext } from "@/contexts/ProductProvider";
-import { Page } from "@/types/Page";
+import { Page } from "@/types/page";
 
-export default function PageSelector({
-  children,
-  step,
-  disabled,
-}: {
-  children: ReactNode;
-  step: Page;
+type Props = {
+  step: Partial<Page>;
   disabled: boolean;
-}) {
+};
+
+const PageSelector: FC<PropsWithChildren<Props>> = ({
+  disabled,
+  step,
+  children,
+}) => {
   const { dispatch } = useContext(ProductContext);
   return (
     <Button
@@ -30,4 +31,6 @@ export default function PageSelector({
       {children}
     </Button>
   );
-}
+};
+
+export default PageSelector;

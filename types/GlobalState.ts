@@ -1,5 +1,5 @@
-import { Cart } from "./CartProduct";
-import { Page } from "./Page";
+import { Cart } from "./cart-product";
+import { Page } from "./page";
 import { ProductProps } from "./ProductProps";
 
 export type GlobalState = {

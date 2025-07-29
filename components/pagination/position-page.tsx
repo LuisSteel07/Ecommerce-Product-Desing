@@ -6,7 +6,7 @@ export default function PositionPage() {
   const { state } = useContext(ProductContext);
   return (
     <div className="flex w-fit items-center justify-center text-sm font-medium">
-      Page {state.page.actualPage} of {state.page.pages}
+      Page {state.page.currentPage} of {state.page.pages}
     </div>
   );
 }

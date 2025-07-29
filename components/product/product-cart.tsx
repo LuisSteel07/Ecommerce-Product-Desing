@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CartProduct } from "@/types/CartProduct";
+import { CartProduct } from "@/types/cart-product";
 import { useContext } from "react";
 import { ProductContext } from "@/contexts/ProductProvider";
 

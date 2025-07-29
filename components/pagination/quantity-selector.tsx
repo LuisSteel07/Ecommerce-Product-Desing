@@ -25,11 +25,8 @@ export default function QuantitySelector() {
             type: "SET_PAGE",
             payload: {
               page: {
-                actualPage: state.page.actualPage,
                 quantityProducts: Number(value),
-                pages: Math.ceil(
-                  state.page.quantityProducts / Number(value)
-                ),
+                pages: Math.ceil(state.page.quantityProducts / Number(value)),
               },
             },
           });

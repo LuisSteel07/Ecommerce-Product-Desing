@@ -1,6 +1,6 @@
-import { Action } from "../types/Action";
-import { CartProduct } from "../types/CartProduct";
-import { GlobalState } from "../types/GlobalState";
+import { Action } from "../types/action";
+import { CartProduct } from "../types/cart-product";
+import { GlobalState } from "../types/globalState";
 
 export default function reducer(
   state: GlobalState,

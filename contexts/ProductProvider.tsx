@@ -1,7 +1,7 @@
 "use client";
 import reducer from "@/reducer/reducer";
-import { Action } from "@/types/Action";
-import { GlobalState } from "@/types/GlobalState";
+import { Action } from "@/types/action";
+import { GlobalState } from "@/types/globalState";
 import { createContext, Dispatch, useReducer } from "react";
 
 type ProductContextType = {
@@ -12,7 +12,7 @@ type ProductContextType = {
 const initialState: GlobalState = {
   products: [],
   page: {
-    actualPage: 1,
+    currentPage: 1,
     quantityProducts: 10,
     pages: 1,
   },

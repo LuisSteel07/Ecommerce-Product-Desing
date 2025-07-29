@@ -6,9 +6,14 @@ export function useFetch() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const url = state.search
-      ? `${process.env.NEXT_PUBLIC_BASE_URL}/Products?lastProductIndex=0&itemsPerPage=${state.page.quantityProducts}&keyword=${state.search}`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/Products?lastProductIndex=0&itemsPerPage=${state.page.quantityProducts}`;
+    const searchParam = new URLSearchParams();
+    Object.entries(state.page).forEach(([key, value]) => {
+      if (value) searchParam.append(key, value.toString());
+    });
+
+    const url = `${
+      process.env.NEXT_PUBLIC_BASE_URL
+    }/Products?${searchParam.toString()}`;
 
     const fetchData = async () => {
       try {
