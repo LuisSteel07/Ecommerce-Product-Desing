@@ -1,6 +1,4 @@
-"use client";
 import Link from "next/link";
-
 import {
   Sheet,
   SheetContent,
@@ -9,16 +7,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import ThemeSelector from "./theme/theme-selector";
-import CartPopover from "./product/cart-popover";
-import { useSession } from "next-auth/react";
-import { Button } from "@/components/ui/button";
-import { UserDateils } from "./user-details";
+import ThemeSelector from "../theme/theme-selector";
+import CartPopover from "../product/cart-popover";
 import Search from "./search";
+import { UserDetails } from "./user-details";
 
 export default function Navbar() {
-  const { data: session } = useSession();
-
   return (
     <nav className="flex md:flex-row justify-between flex-col md:border-b-2 md:border-black/10 dark:md:border-white/10 border-0 m-2 z-0">
       <Sheet>
@@ -79,17 +73,7 @@ export default function Navbar() {
       </Sheet>
       <section className="flex flex-row items-center justify-center md:gap-8 gap-4 mb-4">
         <CartPopover />
-        {session ? (
-          <UserDateils
-            name={session.user?.name || ""}
-            email={session.user?.email || ""}
-            image={session.user?.image || ""}
-          />
-        ) : (
-          <Link href={"/account"}>
-            <Button>Sign In</Button>
-          </Link>
-        )}
+        <UserDetails />
         <Search />
       </section>
     </nav>

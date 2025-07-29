@@ -7,4 +7,5 @@ export type CartProduct = ProductProps & {
 export type Cart = {
     products: Array<CartProduct>
     total: number
+    products_amount: number
 }

@@ -1,8 +1,8 @@
 "use client";
+import reducer from "@/reducer/reducer";
+import { Action } from "@/types/Action";
+import { GlobalState } from "@/types/GlobalState";
 import { createContext, Dispatch, useReducer } from "react";
-import reducer from "../reducer/reducer";
-import { Action } from "../types/Action";
-import { GlobalState } from "../types/GlobalState";
 
 type ProductContextType = {
   dispatch: Dispatch<Action>;
@@ -11,11 +11,16 @@ type ProductContextType = {
 
 const initialState: GlobalState = {
   products: [],
-  page: 5,
+  page: {
+    actualPage: 1,
+    quantityProducts: 10,
+    pages: 1,
+  },
   search: "",
   cart: {
     products: [],
     total: 0,
+    products_amount: 0,
   },
 };
 

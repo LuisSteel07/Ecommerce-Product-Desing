@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import {
   Popover,
@@ -6,27 +7,18 @@ import {
 } from "@/components/ui/popover";
 import CartProductCard from "./product-cart";
 import { Button } from "@/components/ui/button";
-import { ProductContext } from "../../contexts/ProductProvider";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
+import { ProductContext } from "@/contexts/ProductProvider";
 
 export default function CartPopover() {
   const { state } = useContext(ProductContext);
-  const [allProducts, setAllProducts] = useState(0);
-
-  useEffect(() => {
-    let total = 0;
-    state.cart.products.map((e) => {
-      total += e.count;
-    });
-    setAllProducts(total);
-  }, [state.cart.products]);
-
+  
   return (
     <Popover>
       <PopoverTrigger>
         <div className="z-0 flex relative">
           <span className="z-10 -translate-y-4 translate-x-4  absolute bg-amber-600 p-3 rounded-full w-2 h-2 flex justify-center items-center">
-            <p>{allProducts}</p>
+            <p>{state.cart.products_amount}</p>
           </span>
           <Image
             src="/icon-cart.svg"
