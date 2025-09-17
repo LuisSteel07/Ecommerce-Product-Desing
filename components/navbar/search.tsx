@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useContext, useState } from "react";
-import { ProductContext } from "@/contexts/ProductProvider";
+import { ProductContext } from "@/global-store/products/context";
 
 export default function Search() {
   const [value, setValue] = useState("");

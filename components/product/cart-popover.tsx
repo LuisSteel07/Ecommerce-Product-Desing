@@ -8,11 +8,11 @@ import {
 import CartProductCard from "./product-cart";
 import { Button } from "@/components/ui/button";
 import { useContext } from "react";
-import { ProductContext } from "@/contexts/ProductProvider";
+import { ProductContext } from "@/global-store/products/context";
 
 export default function CartPopover() {
   const { state } = useContext(ProductContext);
-  
+
   return (
     <Popover>
       <PopoverTrigger>

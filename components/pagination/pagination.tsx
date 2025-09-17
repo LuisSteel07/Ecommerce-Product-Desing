@@ -7,7 +7,7 @@ export default function Pagination() {
     <div className="flex justify-center items-center gap-8 lg:w-full">
       <QuantitySelector />
       <PositionPage />
-      <Selectors/>
+      <Selectors />
     </div>
   );
 }

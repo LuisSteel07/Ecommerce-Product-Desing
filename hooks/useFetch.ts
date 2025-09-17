@@ -1,14 +1,19 @@
+import { ProductContext } from "@/global-store/products/context";
 import { useState, useEffect, useContext } from "react";
-import { ProductContext } from "@/contexts/ProductProvider";
 
 export function useFetch() {
   const { state, dispatch } = useContext(ProductContext);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const url = state.search
-      ? `${process.env.NEXT_PUBLIC_BASE_URL}/Products?lastProductIndex=0&itemsPerPage=${state.page.quantityProducts}&keyword=${state.search}`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/Products?lastProductIndex=0&itemsPerPage=${state.page.quantityProducts}`;
+    const searchParams = new URLSearchParams();
+    Object.entries([state.search, state.page]).forEach(([key, value]) => {
+      if (value) searchParams.append(key, value.toString());
+    });
+
+    const url = `${
+      process.env.NEXT_PUBLIC_BASE_URL
+    }/Products?${searchParams.toString()}`;
 
     const fetchData = async () => {
       try {

@@ -36,9 +36,12 @@ export const UserDetails = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Avatar className="h-8 w-8 rounded-lg">
-          <AvatarImage src={session.user?.image} alt={session.user?.name} />
+          <AvatarImage
+            src={session.user?.image ?? undefined}
+            alt={session.user?.name ?? undefined}
+          />
           <AvatarFallback className="rounded-lg">
-            {session.user?.name.charAt(0).toUpperCase()}
+            {session.user?.name?.charAt(0).toUpperCase()}
           </AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
@@ -50,9 +53,12 @@ export const UserDetails = () => {
         <DropdownMenuLabel className="p-0 font-normal">
           <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
             <Avatar className="h-8 w-8 rounded-lg">
-              <AvatarImage src={session.user?.image} alt={session.user?.name} />
+              <AvatarImage
+                src={session.user?.image ?? undefined}
+                alt={session.user?.name ?? undefined}
+              />
               <AvatarFallback className="rounded-lg">
-                {session.user?.name.charAt(0).toUpperCase()}
+                {session.user?.name?.charAt(0).toUpperCase()}
               </AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">

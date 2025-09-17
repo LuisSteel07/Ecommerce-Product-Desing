@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ProductContext } from "@/contexts/ProductProvider";
+import { ProductContext } from "@/global-store/products/context";
 import { useContext } from "react";
 
 export default function QuantitySelector() {
@@ -25,11 +25,8 @@ export default function QuantitySelector() {
             type: "SET_PAGE",
             payload: {
               page: {
-                actualPage: state.page.actualPage,
                 quantityProducts: Number(value),
-                pages: Math.ceil(
-                  state.page.quantityProducts / Number(value)
-                ),
+                pages: Math.ceil(state.page.quantityProducts / Number(value)),
               },
             },
           });

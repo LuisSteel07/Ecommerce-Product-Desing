@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import { ProductProps } from "@/types/ProductProps";
+import { ProductProps } from "@/types/product-props";
 import ActionCart from "./action-cart";
 import ProductCount from "./product-count";
 

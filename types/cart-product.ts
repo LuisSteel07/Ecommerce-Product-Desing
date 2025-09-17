@@ -1,4 +1,4 @@
-import { ProductProps } from "./ProductProps"
+import { ProductProps } from "./product-props"
 
 export type CartProduct = ProductProps & {
     count: number,
