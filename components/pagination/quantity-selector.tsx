@@ -14,6 +14,10 @@ import { useContext } from "react";
 export default function QuantitySelector() {
   const { state, dispatch } = useContext(ProductContext);
 
+  console.log(state.page.currentPage);
+  console.log(state.page.pages);
+  console.log(state.page.quantityProducts);
+
   return (
     <div className="hidden items-center gap-2 lg:flex">
       <Label htmlFor="rows-per-page" className="text-sm font-medium">
@@ -25,8 +29,9 @@ export default function QuantitySelector() {
             type: "SET_PAGE",
             payload: {
               page: {
+                currentPage: 1,
                 quantityProducts: Number(value),
-                pages: Math.ceil(state.page.quantityProducts / Number(value)),
+                pages: Math.ceil(state.products.length / Number(value)),
               },
             },
           });
@@ -36,7 +41,7 @@ export default function QuantitySelector() {
           <SelectValue placeholder={state.page.quantityProducts} />
         </SelectTrigger>
         <SelectContent side="top">
-          {[10, 15, 20, 30].map((pageSize) => (
+          {[5, 10, 15, 20, 30].map((pageSize) => (
             <SelectItem key={pageSize} value={`${pageSize}`}>
               {pageSize}
             </SelectItem>

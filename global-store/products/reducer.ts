@@ -92,7 +92,10 @@ export default function reducer(
     case "SET_PAGE":
       return {
         ...state,
-        page: action.payload.page,
+        page: {
+          ...state.page,
+          ...action.payload.page,
+        },
       };
     case "FILTER_PRODUCTS":
       return {

@@ -14,6 +14,11 @@ import ProductCount from "./product-count";
 export default function ProductCard({ product }: { product: ProductProps }) {
   const { id, name, short_description, price, thumbnail } = product;
 
+  const description: string =
+    short_description.length > 80
+      ? `${short_description.slice(0, 77)}...`
+      : short_description;
+
   return (
     <Card className="w-[340px] m-4">
       <CardHeader>
@@ -22,18 +27,16 @@ export default function ProductCard({ product }: { product: ProductProps }) {
           View more
         </Link>
       </CardHeader>
-      <CardContent className="flex flex-col gap-8">
+      <CardContent className="flex flex-col gap-8 justify-center items-center">
         <Image
           src={thumbnail}
           alt="Product Image"
-          width={320}
-          height={320}
-          className="rounded-md"
+          width={240}
+          height={240}
+          className="rounded-md h-[240px] w-[240px]"
         />
         <section className="flex flex-col gap-4">
-          <CardDescription className="text-xl">
-            {short_description}
-          </CardDescription>
+          <CardDescription className="text-xl">{description}</CardDescription>
           <div className="flex flex-row justify-between items-center">
             <p className="font-bold text-lg">${price}</p>
             <div className="flex flex-row justify-center items-center gap-4">
